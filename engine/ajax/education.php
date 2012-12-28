@@ -21,7 +21,7 @@ if (isset($_GET["specid"]) || isset($_GET["regid"]) || isset($_GET["vuzid"]))
 
         $result = array();
         while ($row = $db->get_row($sql)) {
-            $result[] = array("id"=>$row["id"], "title"=>$row["title"]);
+            $result[] = array("id"=>$row["id"], "title"=>urlencode($row["title"]));
         }
 
         if (!empty($result)) {
@@ -41,7 +41,7 @@ if (isset($_GET["specid"]) || isset($_GET["regid"]) || isset($_GET["vuzid"]))
 
         $result = array();
         while ($row = $db->get_row($sql)) {
-        $result[] = array("id"=>$row["id"], "title"=>$row["title"], "link"=>$row["link"]);
+        $result[] = array("id"=>$row["id"], "title"=>urlencode($row["title"]), "link"=>$row["link"]);
         }
 
         if (!empty($result)) {
